@@ -1,0 +1,28 @@
+{
+  "name": "tailwindpratice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "detect-libc": "^2.1.2",
+    "fdir": "^6.5.0",
+    "graceful-fs": "^4.2.11",
+    "lightningcss-win32-x64-msvc": "^1.32.0",
+    "magic-string": "^0.30.21",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.5",
+    "rolldown": "^1.1.5",
+    "tailwindcss": "^4.3.2",
+    "tinyglobby": "^0.2.17"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

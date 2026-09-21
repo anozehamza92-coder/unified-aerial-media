@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Unified | Aerial Media & Creative Studio</title>
+
+    <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      :root {
+        --blue: #2563eb;
+        --cyan: #06b6d4;
+        --violet: #7c3aed;
+        --navy: #0f172a;
+        --silver: #f1f5f9;
+      }
+
+      body {
+        background: #ffffff;
+        color: #0f172a;
+      }
+
+      /* Premium gradients */
+      .gradient-brand {
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #06b6d4 48%,
+          #7c3aed 100%
+        );
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, #2563eb, #06b6d4, #7c3aed);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .soft-gradient {
+        background:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 10%,
+            rgba(6, 182, 212, 0.12),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 70% 90%,
+            rgba(124, 58, 237, 0.1),
+            transparent 30%
+          ),
+          #f8fafc;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      }
+
+      .premium-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .premium-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 25px 55px rgba(37, 99, 235, 0.16);
+      }
+
+      .shine {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shine::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 60%;
+        height: 100%;
+        transform: skewX(-20deg);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.35),
+          transparent
+        );
+        transition: left 0.7s ease;
+      }
+
+      .shine:hover::after {
+        left: 140%;
+      }
+    </style>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+      <nav class="mx-auto mt-4 max-w-7xl px-4">
+        <div
+          class="glass rounded-2xl px-5 py-4 flex items-center justify-between"
+        >
+          <a href="#home" class="text-2xl font-black tracking-tight">
+            <span class="gradient-text">UNIFIED</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+            <a href="#home" class="hover:text-blue-600 transition">Home</a>
+            <a href="#services" class="hover:text-blue-600 transition"
+              >Services</a
+            >
+            <a href="#gallery" class="hover:text-blue-600 transition"
+              >Gallery</a
+            >
+            <a href="#blog" class="hover:text-blue-600 transition">Blog</a>
+            <a href="#contact" class="hover:text-blue-600 transition"
+              >Contact</a
+            >
+          </div>
+
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex gradient-brand text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition"
+          >
+            Start a Project
+          </a>
+
+          <button
+            id="menuBtn"
+            class="md:hidden text-2xl"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden mt-2 glass rounded-2xl p-5"
+        >
+          <div class="flex flex-col gap-4 font-semibold">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="./Images/drone-hero.png"
+          alt="Drone aerial photography"
+          class="w-full h-full object-cover"
+        />
+
+        <!-- brighter cinematic overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-blue-950/35 to-blue-900/10"
+        ></div>
+
+        <!-- color glow -->
+        <div
+          class="absolute -top-32 -right-32 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+        <div class="max-w-3xl">
+          <div
+            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-7"
+          >
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Aerial Media • Photography • Creative Production
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.02]">
+            See Your World
+            <span class="block gradient-text">From a New Angle.</span>
+          </h1>
+
+          <p
+            class="mt-7 text-lg md:text-xl text-slate-200 max-w-2xl leading-relaxed"
+          >
+            Unified creates premium aerial photography, cinematic video,
+            commercial content and visual experiences that make brands,
+            properties and events impossible to ignore.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="gradient-brand text-white px-7 py-4 rounded-xl font-bold shadow-xl shadow-blue-500/30 hover:scale-105 transition"
+            >
+              Start a Project
+            </a>
+
+            <a
+              href="#gallery"
+              class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-7 py-4 rounded-xl font-bold hover:bg-white/20 transition"
+            >
+              Explore Our Work
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap gap-8 text-white">
+            <div>
+              <div class="text-3xl font-black">4K+</div>
+              <div class="text-sm text-slate-300">Visual Quality</div>
+            </div>
+
+            <div>
+              <div class="text-3xl font-black">360°</div>
+              <div class="text-sm text-slate-300">Creative Perspective</div>
+            </div>
+
+            <div>
+              <div class="text-3xl font-black">100%</div>
+              <div class="text-sm text-slate-300">Professional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 text-sm"
+      >
+        ↓ Scroll to explore
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="relative py-24 overflow-hidden soft-gradient">
+      <!-- decorative shapes -->
+      <div
+        class="absolute -top-32 -left-32 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute -bottom-32 -right-32 w-96 h-96 bg-violet-400/15 rounded-full blur-3xl"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="inline-block text-blue-600 font-bold uppercase tracking-[.2em] text-sm mb-4"
+          >
+            Our Studio
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-black text-slate-900">
+            Professional Visual
+            <span class="gradient-text">Production</span>
+          </h2>
+
+          <p class="mt-5 text-slate-600 text-lg">
+            From the sky to the studio, we produce clean, powerful and memorable
+            visual content for modern brands and businesses.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- CARD 1 -->
+          <div class="premium-card glass rounded-3xl p-7 shine">
+            <div
+              class="w-14 h-14 rounded-2xl gradient-brand flex items-center justify-center text-white text-2xl mb-6"
+            >
+              🚁
+            </div>
+
+            <h3 class="text-xl font-black mb-3">Drone Photography</h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              High-quality aerial photography for real estate, construction,
+              tourism, events and commercial projects.
+            </p>
+
+            <div class="mt-6 text-blue-600 font-bold">Explore service →</div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="premium-card glass rounded-3xl p-7 shine">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-2xl mb-6"
+            >
+              🎥
+            </div>
+
+            <h3 class="text-xl font-black mb-3">Cinematic Video</h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Cinematic video production designed to communicate your story with
+              emotion, movement and clarity.
+            </p>
+
+            <div class="mt-6 text-cyan-600 font-bold">Explore service →</div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="premium-card glass rounded-3xl p-7 shine">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-blue-600 flex items-center justify-center text-white text-2xl mb-6"
+            >
+              📸
+            </div>
+
+            <h3 class="text-xl font-black mb-3">Photography</h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Professional photography for people, brands, products, corporate
+              events and creative campaigns.
+            </p>
+
+            <div class="mt-6 text-violet-600 font-bold">Explore service →</div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="premium-card glass rounded-3xl p-7 shine">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center text-white text-2xl mb-6"
+            >
+              ✨
+            </div>
+
+            <h3 class="text-xl font-black mb-3">Creative Production</h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Complete visual production for campaigns, social media,
+              advertisements and business storytelling.
+            </p>
+
+            <div class="mt-6 text-blue-600 font-bold">Explore service →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14"
+        >
+          <div>
+            <span
+              class="text-blue-600 font-bold uppercase tracking-[.2em] text-sm"
+            >
+              Selected Work
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black mt-3">
+              Our Visual
+              <span class="gradient-text">Gallery</span>
+            </h2>
+          </div>
+
+          <p class="max-w-xl text-slate-600">
+            A collection of photography, video production and visual
+            storytelling captured through the Unified creative lens.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/brands-people-br2HgQuvq6I-unsplash.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Creative production"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">Brand Storytelling</p>
+              <p class="text-sm text-white/70">Creative Production</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/cheerful-photographer-giving-instructions-studio.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Studio photography"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">Studio Photography</p>
+              <p class="text-sm text-white/70">Professional Production</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/jakob-owens-NLYW63t_bV4-unsplash.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Video production"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">Video Production</p>
+              <p class="text-sm text-white/70">Cinematic Content</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/modern-film-studio-illuminated-by-strobe-light-generated-by-ai.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Film studio"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">Creative Studio</p>
+              <p class="text-sm text-white/70">Visual Direction</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/young-professional-african-american-videographer-holding-professional-camera-with-pro-equipment-afro-cameraman-wearing-black-duraq-face-protect-mask-making-videos.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Videographer"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">On-Location Production</p>
+              <p class="text-sm text-white/70">Professional Crew</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl h-80">
+            <img
+              src="./Images/kyle-loftus-5MUw_NHo5i4-unsplash.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              alt="Creative camera production"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-bold text-lg">Creative Direction</p>
+              <p class="text-sm text-white/70">Visual Storytelling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="py-24 soft-gradient">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span
+            class="text-violet-600 font-bold uppercase tracking-[.2em] text-sm"
+          >
+            Insights
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-black mt-3">
+            Ideas Behind the
+            <span class="gradient-text">Lens</span>
+          </h2>
+
+          <p class="mt-5 text-slate-600 text-lg">
+            Stories, ideas and practical insights from the world of aerial media
+            and creative production.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-7">
+          <article
+            class="premium-card bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200/60"
+          >
+            <img
+              src="./Images/jakob-owens-NLYW63t_bV4-unsplash.jpg"
+              class="w-full h-56 object-cover"
+              alt="Aerial storytelling"
+            />
+
+            <div class="p-7">
+              <span class="text-blue-600 text-sm font-bold">
+                AERIAL MEDIA
+              </span>
+
+              <h3 class="text-xl font-black mt-3">
+                Why aerial visuals transform property marketing
+              </h3>
+
+              <p class="text-slate-600 mt-3 leading-relaxed">
+                Discover how aerial photography can help properties communicate
+                scale, location and value.
+              </p>
+
+              <a href="#" class="inline-block mt-5 font-bold text-blue-600">
+                Read article →
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="premium-card bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200/60"
+          >
+            <img
+              src="./Images/video-camera-recording-football-match.jpg"
+              class="w-full h-56 object-cover"
+              alt="Sports video production"
+            />
+
+            <div class="p-7">
+              <span class="text-cyan-600 text-sm font-bold"> VIDEO </span>
+
+              <h3 class="text-xl font-black mt-3">
+                Creating content people actually remember
+              </h3>
+
+              <p class="text-slate-600 mt-3 leading-relaxed">
+                Great visuals are not only about beautiful images. They are
+                about communicating a memorable story.
+              </p>
+
+              <a href="#" class="inline-block mt-5 font-bold text-cyan-600">
+                Read article →
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="premium-card bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200/60"
+          >
+            <img
+              src="./Images/brands-people-br2HgQuvq6I-unsplash.jpg"
+              class="w-full h-56 object-cover"
+              alt="Brand photography"
+            />
+
+            <div class="p-7">
+              <span class="text-violet-600 text-sm font-bold"> BRANDING </span>
+
+              <h3 class="text-xl font-black mt-3">
+                Turning your brand into a visual experience
+              </h3>
+
+              <p class="text-slate-600 mt-3 leading-relaxed">
+                Consistent visual storytelling can make your business look more
+                established, professional and memorable.
+              </p>
+
+              <a href="#" class="inline-block mt-5 font-bold text-violet-600">
+                Read article →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="relative py-24 overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="./Images/young-professional-african-american-videographer-holding-professional-camera-with-pro-equipment-afro-cameraman-wearing-black-duraq-face-protect-mask-making-videos.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-800/80 to-violet-900/85"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div class="text-white">
+            <span
+              class="text-cyan-300 font-bold uppercase tracking-[.2em] text-sm"
+            >
+              Let's Create
+            </span>
+
+            <h2 class="text-4xl md:text-6xl font-black mt-4 leading-tight">
+              Have a project
+              <span class="text-cyan-300">in mind?</span>
+            </h2>
+
+            <p class="mt-6 text-blue-100 text-lg leading-relaxed max-w-xl">
+              Tell us what you want to create. Whether it is a property shoot,
+              corporate campaign, event coverage, drone project or creative
+              production, let's bring the vision to life.
+            </p>
+
+            <div class="mt-9 space-y-4">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center"
+                >
+                  📧
+                </div>
+                <span>hello@unified.media</span>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center"
+                >
+                  📞
+                </div>
+                <span>Let's discuss your project</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/95 backdrop-blur-xl rounded-3xl p-7 md:p-9 shadow-2xl"
+          >
+            <h3 class="text-2xl font-black text-slate-900">Start a Project</h3>
+
+            <p class="text-slate-500 mt-2 mb-7">
+              Tell us a little about what you need.
+            </p>
+
+            <form id="contactForm" class="space-y-5">
+              <input
+                id="name"
+                type="text"
+                placeholder="Your name"
+                required
+                class="w-full rounded-xl border border-slate-200 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <input
+                id="email"
+                type="email"
+                placeholder="Email address"
+                required
+                class="w-full rounded-xl border border-slate-200 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <input
+                id="project"
+                type="text"
+                placeholder="Project type"
+                required
+                class="w-full rounded-xl border border-slate-200 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Tell us about your project..."
+                required
+                class="w-full rounded-xl border border-slate-200 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="w-full gradient-brand text-white py-4 rounded-xl font-black shadow-lg shadow-blue-500/20 hover:scale-[1.02] transition"
+              >
+                Send Enquiry →
+              </button>
+
+              <p id="formMessage" class="text-center text-sm font-semibold"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div
+          class="w-16 h-16 mx-auto rounded-2xl gradient-brand flex items-center justify-center text-white text-2xl mb-6"
+        >
+          ✦
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-black">
+          Stay in the
+          <span class="gradient-text">creative loop.</span>
+        </h2>
+
+        <p class="mt-4 text-slate-600">
+          Get occasional updates, visual inspiration and creative insights.
+        </p>
+
+        <form
+          id="newsletterForm"
+          class="mt-7 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+        >
+          <input
+            id="newsletterEmail"
+            type="email"
+            required
+            placeholder="Your email address"
+            class="flex-1 rounded-xl border border-slate-200 px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <button
+            type="submit"
+            class="gradient-brand text-white px-7 py-4 rounded-xl font-bold"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <p id="newsletterMessage" class="mt-3 text-sm font-semibold"></p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative overflow-hidden bg-slate-950 text-white">
+      <!-- Decorative glow -->
+      <div
+        class="absolute -top-32 -left-32 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute -bottom-32 -right-32 w-80 h-80 bg-violet-600/20 rounded-full blur-3xl"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 pt-16 pb-8">
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10"
+        >
+          <!-- Brand -->
+          <div class="lg:col-span-2">
+            <div class="text-3xl font-black gradient-text">UNIFIED</div>
+
+            <p class="text-slate-400 mt-4 max-w-md leading-relaxed">
+              Aerial Media & Creative Production. We create premium visual
+              experiences through drone photography, cinematic video,
+              photography and creative production.
+            </p>
+
+            <div class="flex gap-3 mt-6">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition"
+                aria-label="Instagram"
+              >
+                IG
+              </a>
+
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-cyan-500 transition"
+                aria-label="Facebook"
+              >
+                FB
+              </a>
+
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-violet-600 transition"
+                aria-label="LinkedIn"
+              >
+                IN
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div>
+            <h3 class="font-bold text-lg mb-5">Explore</h3>
+
+            <div class="space-y-3 text-slate-400 text-sm">
+              <a href="#home" class="block hover:text-white transition">
+                Home
+              </a>
+
+              <a href="#services" class="block hover:text-white transition">
+                Services
+              </a>
+
+              <a href="#gallery" class="block hover:text-white transition">
+                Gallery
+              </a>
+
+              <a href="#blog" class="block hover:text-white transition">
+                Blog
+              </a>
+
+              <a href="#contact" class="block hover:text-white transition">
+                Contact
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h3 class="font-bold text-lg mb-5">Services</h3>
+
+            <div class="space-y-3 text-slate-400 text-sm">
+              <p class="hover:text-cyan-400 transition cursor-default">
+                Drone Photography
+              </p>
+
+              <p class="hover:text-cyan-400 transition cursor-default">
+                Cinematic Video
+              </p>
+
+              <p class="hover:text-cyan-400 transition cursor-default">
+                Professional Photography
+              </p>
+
+              <p class="hover:text-cyan-400 transition cursor-default">
+                Creative Production
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom footer -->
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-4 pt-7"
+        >
+          <p class="text-slate-500 text-sm text-center md:text-left">
+            © <span id="year"></span> Unified. All rights reserved.
+          </p>
+
+          <div class="flex items-center gap-5 text-slate-500 text-sm">
+            <a href="#" class="hover:text-white transition"> Privacy Policy </a>
+
+            <a href="#" class="hover:text-white transition"> Terms </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Contact form
+      const contactForm = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+
+        formMessage.textContent = `Thank you ${name}. Your enquiry has been received.`;
+
+        formMessage.className =
+          "text-center text-sm font-semibold text-green-600";
+
+        contactForm.reset();
+      });
+
+      // Newsletter
+      const newsletterForm = document.getElementById("newsletterForm");
+      const newsletterMessage = document.getElementById("newsletterMessage");
+
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        newsletterMessage.textContent = "Thank you for subscribing!";
+
+        newsletterMessage.className =
+          "mt-3 text-sm font-semibold text-green-600";
+
+        newsletterForm.reset();
+      });
+
+      // Current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
